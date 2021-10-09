@@ -1,0 +1,190 @@
+﻿<Window x:Class="project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="835" Width="1920" Background="{StaticResource BackgroundColor0}"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        WindowState="Maximized"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Button
+                    Style="{StaticResource ButtonStyle1}"
+                    Width="730"
+                    Height="140"
+                    Content="BOARD CONFIGURATION"
+                    Background="{StaticResource BackgroundColor2}"
+                    Click="Button_Click_View_Config"
+                
+                    />
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Button
+                    Style="{StaticResource ButtonStyle1}"
+                    Width="730"
+                    Height="140"
+                    Content="MEASUREMENT"
+                    Background="{StaticResource BackgroundColor2}"
+                    Click="Button_Click_View_Shoot"
+                
+                    />
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="2">
+                <Button
+                    Style="{StaticResource ButtonStyle1}"
+                    Width="730"
+                    Height="140"
+                    Content="ANALOG TEST"
+                    Background="{StaticResource BackgroundColor2}"
+                    Click="Button_Click_View_Analog"
+                
+                    />
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="3">
+                <Button
+                    Style="{StaticResource ButtonStyle1}"
+                    Width="730"
+                    Height="140"
+                    Content="TREND"
+                    Background="{StaticResource BackgroundColor2}"
+                    Click="Button_Click_View_Trend"
+                
+                    />
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="0" Width="700">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10">
+                <GroupBox  Background="#E8FFFF">
+                    <GroupBox.Header>
+                        <Grid>
+                            <Label Content="Measurement" Style="{StaticResource GroupBoxLableFontStyle1}"/>
+                        </Grid>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Grid.Column="0" Margin="30 20" Height="150" BorderBrush="Black" Background="White">
+                            <GroupBox.Header>
+                                <Label Content="Total" Style="{StaticResource GroupBoxLableFontStyle2}"/>
+                            </GroupBox.Header>
+                            <TextBlock x:Name="TB_Measurement_Result_Total" Text="700" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Black" />
+                        </GroupBox>
+                        <GroupBox Grid.Column="1" Margin="30 20" Height="150" BorderBrush="Black" Background="White">
+                            <GroupBox.Header>
+                                <Label Content="Passed" Style="{StaticResource GroupBoxLableFontStyle2}"/>
+                            </GroupBox.Header>
+                            <TextBlock x:Name="TB_Measurement_Result_Passed" Text="653" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="#2FED28" />
+                        </GroupBox>
+                        <GroupBox Grid.Column="2" Margin="30 20" Height="150" BorderBrush="Black" Background="White">
+                            <GroupBox.Header>
+                                <Label Content="Failed" Style="{StaticResource GroupBoxLableFontStyle2}"/>
+                            </GroupBox.Header>
+                            <TextBlock x:Name="TB_Measurement_Result_Failed" Text="47" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="#FF1212" />
+                        </GroupBox>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Row="1" Margin="10">
+                <GroupBox Background="#E8FFFF">
+                    <GroupBox.Header>
+                        <Grid>
+                            <Label Content="Analog" Style="{StaticResource GroupBoxLableFontStyle1}"/>
+                        </Grid>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Grid.Column="0" Height="150" Margin="30 20" BorderBrush="Black" Background="White">
+                            <GroupBox.Header>
+                                <Label Content="Total" Style="{StaticResource GroupBoxLableFontStyle2}"/>
+                            </GroupBox.Header>
+                            <TextBlock x:Name="TB_Analog_Result_Total" Text="700" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Black" />
+                        </GroupBox>
+                        <GroupBox Grid.Column="1" Height="150" Margin="30 20" BorderBrush="Black" Background="White">
+                            <GroupBox.Header>
+                                <Label Content="Passed" Style="{StaticResource GroupBoxLableFontStyle2}"/>
+                            </GroupBox.Header>
+                            <TextBlock x:Name="TB_Analog_Result_Passed" Text="653" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="#2FED28" />
+                        </GroupBox>
+                        <GroupBox Grid.Column="2" Height="150" Margin="30 20" BorderBrush="Black" Background="White">
+                            <GroupBox.Header>
+                                <Label Content="Failed" Style="{StaticResource GroupBoxLableFontStyle2}"/>
+                            </GroupBox.Header>
+                            <TextBlock x:Name="TB_Analog_Result_Failed" Text="47" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="#FF1212" />
+                        </GroupBox>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Row="3" Height="200" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <TextBlock Text="PORT" FontWeight="Bold" FontSize="25" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Border x:Name="PORT_STATUS" BorderThickness="1" Margin="10">
+                        <Button Click="Button_Click_Port_Connect" Background="#E8FFFF">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                                <Ellipse x:Name="ELP_PORT_STATUS" Width="30" Height="30" Fill="Red"/>
+                                <TextBlock x:Name="TB_PORT_STATUS" Text="CLOSED" FontSize="30" FontWeight="DemiBold" VerticalAlignment="Center" Margin="20"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <TextBlock Text="BOARD" FontWeight="Bold" FontSize="25" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Border x:Name="BOARD_STATUS" BorderThickness="1" Margin="10">
+                        <Button Click="Button_Click_Board_Connect" Background="#E8FFFF">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Ellipse x:Name="ELP_BOARD_STATUS" Width="30" Height="30" Fill="Red"/>
+                                <TextBlock x:Name="TB_BOARD_STATUS" Text="DISCONNECTED" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" Margin="20"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock x:Name="TB_LOGCAT" Text="" Style="{StaticResource LogCatStyle}"/>
+        </Grid>
+    </Grid>
+</Window>
